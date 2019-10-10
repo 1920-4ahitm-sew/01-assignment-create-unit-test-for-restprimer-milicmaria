@@ -21,7 +21,7 @@ public class TimeServerResourceIT {
     @Before
     public void initClient(){
         this.client = ClientBuilder.newClient();
-        this.tut = this.client.target("http://localhost:8080/restprimer/rs/time");
+        this.tut = this.client.target("http://localhost:8080/restprimer/api/time");
     }
 
     @Test
