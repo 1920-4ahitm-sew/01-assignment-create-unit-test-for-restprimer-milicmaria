@@ -1,7 +1,10 @@
 package at.htl.restprimer.rest;
 
-import org.junit.Before;
-import org.junit.Test;
+
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -11,14 +14,14 @@ import javax.ws.rs.core.Response;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TimeServerResourceIT {
 
     private Client client;
     private WebTarget tut;
 
-    @Before
+    @BeforeEach
     public void initClient(){
         this.client = ClientBuilder.newClient();
         this.tut = this.client.target("http://localhost:8080/restprimer/api/time");
